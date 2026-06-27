@@ -1,34 +1,366 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #000; color: #fff; font-family: 'Helvetica', sans-serif; line-height: 1.6; }
-
-/* --- Hero Section --- */
-.hero {
-    height: 80vh;
-    background: url('The sukoon lab spotify banner.png') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
+/* =========================================
+   CSS Variables & Global Reset
+========================================= */
+:root {
+  --bg-color: #0a0a0a;
+  --surface-color: #141414;
+  --surface-hover: #1f1f1f;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --accent-color: #d4af37; /* Soft Gold/Champagne */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+  --transition: all 0.3s ease;
 }
-.hero-overlay { position: absolute; top:0; left:0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
-.hero-content { position: relative; z-index: 2; }
-.hero h1 { font-size: 3rem; margin-bottom: 10px; }
-.listen-btn { display: inline-block; padding: 10px 20px; border: 1px solid #fff; color: #fff; text-decoration: none; margin-top: 20px; }
 
-/* --- Main Layout --- */
-.container { max-width: 1000px; margin: 40px auto; padding: 20px; }
-h2 { margin-bottom: 20px; color: #d4af37; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* --- Release Section --- */
-.release-card { display: flex; gap: 40px; align-items: center; margin-bottom: 80px; }
-.release-card img { width: 300px; height: 300px; object-fit: cover; border-radius: 8px; }
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* --- Archive --- */
-.archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-.img-placeholder { width: 100%; aspect-ratio: 1/1; background: #222; border-radius: 8px; margin-bottom: 10px; }
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   Typography & Layout Utilities
+========================================= */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/* =========================================
+   Hero Section
+========================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #111 0%, #000 100%); /* Add a background-image URL here if you want a photo background */
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 20%, #0a0a0a 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(212, 175, 55, 0.2);
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.listen-button {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #000;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.listen-button:hover {
+  background-color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   Latest Release Section
+========================================= */
+.latest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  background-color: var(--surface-color);
+  padding: 3rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cover img {
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  transition: var(--transition);
+}
+
+.cover img:hover {
+  transform: scale(1.02);
+}
+
+.release-info h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.release-info p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-family: var(--font-heading);
+  margin-bottom: 2rem;
+}
+
+.platform-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.platform-icons a {
+  padding: 0.6rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.platform-icons a:hover {
+  background-color: var(--accent-color);
+  color: #000;
+  border-color: var(--accent-color);
+}
+
+/* =========================================
+   Popular Releases Section
+========================================= */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.album-card {
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.album-card:hover {
+  transform: translateY(-10px);
+  background-color: var(--surface-hover);
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+.album-card img {
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.album-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.album-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.album-links a {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.album-links a:hover {
+  color: var(--accent-color);
+}
+
+/* =========================================
+   Featured Videos Section
+========================================= */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================
+   About Section
+========================================= */
+.about {
+  background-color: var(--surface-color);
+  text-align: center;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* =========================================
+   Footer
+========================================= */
+footer {
+  padding: 4rem 0 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.social-links a {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
+.email {
+  margin-bottom: 1rem;
+}
+
+.email a {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+}
+
+.copyright {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   Animations (Triggered by JS)
+========================================= */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================================
+   Responsive Design (Mobile)
+========================================= */
 @media (max-width: 768px) {
-    .release-card { flex-direction: column; text-align: center; }
+  .hero h1 { font-size: 3rem; }
+  .hero h2 { font-size: 1.4rem; }
+  
+  .latest-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .platform-icons {
+    justify-content: center;
+  }
+  
+  .section-title { font-size: 2rem; }
 }
