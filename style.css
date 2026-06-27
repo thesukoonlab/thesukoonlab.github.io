@@ -1,212 +1,140 @@
 /* =========================================
-   Premium CSS Variables & Global Reset
+   Editorial Variables & Setup
 ========================================= */
 :root {
-  --bg-color: #030303; /* Deepest rich black */
-  --surface-color: rgba(255, 255, 255, 0.02); /* Barely-there glass */
-  --border-color: rgba(255, 255, 255, 0.08);
-  --text-primary: #e8e8e8;
-  --text-secondary: #8c8c8c;
-  
-  /* Metallic Gold Gradient */
-  --gold-light: #f3d078;
-  --gold-dark: #b8860b;
-  --gold-gradient: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-dark) 100%);
-  
+  --bg-color: #050505; 
+  --text-primary: #f0f0f0;
+  --text-secondary: #777;
+  --gold: #d4af37;
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;
-  --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Silky smooth easing */
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-primary);
   font-family: var(--font-body);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
-}
+a { text-decoration: none; color: inherit; }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* =========================================
-   Typography & Layout Utilities
-========================================= */
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  font-weight: 400; /* Lighter weights feel more premium */
-}
-
-.container {
-  max-width: 1100px; /* Slightly narrower for editorial feel */
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 3.5rem;
-  text-align: center;
-  /* Gold text effect */
-  background: var(--gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 2px;
-}
-
-section {
-  padding: 6rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+/* CSS Film Grain Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 /* =========================================
-   Hero Section
+   1. Asymmetrical Hero Section
 ========================================= */
-.hero {
-  position: relative;
+.editorial-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Splits the screen unevenly */
   min-height: 100vh;
-  display: flex;
+  padding: 4rem 5%;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: radial-gradient(circle at center, #111 0%, #030303 70%);
-  overflow: hidden;
+  gap: 4rem;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 2rem;
+.massive-text {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 8vw, 9rem);
+  line-height: 0.9;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.gold-text {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-right {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding-left: 2rem;
+  border-left: 1px solid rgba(255,255,255,0.1);
 }
 
-.logo {
-  width: 140px;
-  height: 140px;
+.editorial-logo {
+  width: 120px;
   border-radius: 50%;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 0 40px rgba(184, 134, 11, 0.15); /* Subtle gold glow */
-  border: 1px solid rgba(243, 208, 120, 0.3);
+  margin-bottom: 3rem;
 }
 
-.hero h1 {
-  font-size: 4.5rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
-}
-
-.hero h2 {
-  font-size: 1.5rem;
-  color: var(--gold-light);
-  font-style: italic;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-.hero p {
-  font-size: 1.05rem;
+.manifesto {
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  margin-bottom: 3.5rem;
-  max-width: 550px;
-  font-weight: 300;
-  letter-spacing: 0.5px;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 400px;
 }
 
-/* Premium Outlined Button */
-.listen-button {
-  display: inline-block;
-  padding: 1rem 3rem;
-  border-radius: 4px; /* Sharp edges feel more high-fashion/editorial */
-  font-weight: 400;
-  font-size: 0.9rem;
+.editorial-btn {
+  border: 1px solid var(--text-primary);
+  padding: 1rem 2.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
   background: transparent;
-  color: var(--gold-light);
-  border: 1px solid var(--gold-dark);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+  color: var(--text-primary);
 }
 
-.listen-button::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--gold-gradient);
-  z-index: -1;
-  transition: transform 0.5s ease;
-  transform: scaleY(0);
-  transform-origin: bottom;
-}
-
-.listen-button:hover {
-  color: #000;
-  border-color: transparent;
-}
-
-.listen-button:hover::before {
-  transform: scaleY(1);
+.editorial-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-color);
 }
 
 /* =========================================
-   Latest Release Section
+   2. Latest Release (Offset Layout)
 ========================================= */
-.latest-grid {
+.immersive-section {
+  padding: 10rem 5%;
+}
+
+.split-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   align-items: center;
-  background-color: var(--surface-color);
-  backdrop-filter: blur(10px); /* Glassmorphism */
-  padding: 4rem;
-  border-radius: 2px;
-  border: 1px solid var(--border-color);
 }
 
-.cover img {
-  border-radius: 2px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-  transition: var(--transition);
+.cover-wrapper img {
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
 }
 
-.cover img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 25px 60px rgba(184, 134, 11, 0.15); /* Gold tinted shadow on hover */
+.editorial-info .kicker {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
 }
 
-.release-info h3 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-}
-
-.release-info p {
-  font-size: 1.1rem;
-  color: var(--gold-light);
-  font-style: italic;
+.editorial-info h2 {
   font-family: var(--font-heading);
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.editorial-info .poet {
+  font-style: italic;
+  color: var(--text-secondary);
   margin-bottom: 3rem;
-  opacity: 0.8;
+  font-size: 1.2rem;
 }
 
 .platform-icons {
@@ -216,218 +144,152 @@ section {
 }
 
 .platform-icons a {
-  padding: 0.75rem 1.5rem;
-  background-color: transparent;
-  border: 1px solid var(--border-color);
-  border-radius: 2px;
-  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 4px;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--text-secondary);
+  transition: 0.3s;
 }
 
 .platform-icons a:hover {
-  border-color: var(--gold-light);
-  color: var(--gold-light);
-  background-color: rgba(243, 208, 120, 0.05);
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 /* =========================================
-   Popular Releases Section
+   3. Horizontal Scrolling Archive
 ========================================= */
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+.popular-releases {
+  padding: 8rem 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.section-header {
+  padding: 0 5%;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* The horizontal track */
+.horizontal-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 0 5% 2rem 5%;
+  scrollbar-width: none; /* Hides scrollbar Firefox */
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Hides scrollbar Chrome/Safari */
+}
+
+.album-track {
+  display: inline-flex;
   gap: 3rem;
 }
 
 .album-card {
-  text-align: center;
-  transition: var(--transition);
-}
-
-.album-card:hover {
-  transform: translateY(-8px);
+  width: 350px;
+  flex-shrink: 0;
+  position: relative;
+  group;
 }
 
 .album-card img {
-  border-radius: 2px;
-  margin-bottom: 2rem;
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  aspect-ratio: 1/1;
   object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  border: 1px solid transparent;
-  transition: var(--transition);
+  filter: grayscale(80%);
+  transition: 0.5s ease;
 }
 
 .album-card:hover img {
-  border-color: rgba(243, 208, 120, 0.2);
+  filter: grayscale(0%);
 }
 
-.album-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.album-links {
+.album-meta {
+  margin-top: 1.5rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2rem;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
-.album-links a {
+.album-meta h3 {
+  font-size: 1.2rem;
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+.album-meta a {
   font-size: 0.75rem;
-  color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-}
-
-/* Elegant underline hover effect for links */
-.album-links a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: -4px;
-  left: 0;
-  background: var(--gold-gradient);
-  transition: width 0.3s ease;
-}
-
-.album-links a:hover {
-  color: var(--text-primary);
-}
-
-.album-links a:hover::after {
-  width: 100%;
+  letter-spacing: 1px;
+  color: var(--gold);
 }
 
 /* =========================================
-   Featured Videos Section
+   4. Minimal Footer
 ========================================= */
-.video-grid {
+.minimal-footer {
+  padding: 6rem 5%;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.split-footer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
 }
 
-iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--border-color);
-  border-radius: 2px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-  transition: var(--transition);
-}
-
-iframe:hover {
-  border-color: rgba(243, 208, 120, 0.3);
-}
-
-/* =========================================
-   About Section
-========================================= */
-.about {
-  background-color: var(--bg-color);
-  text-align: center;
-}
-
-.about p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.25rem;
+.split-footer h2 {
   font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.email-link {
   color: var(--text-secondary);
-  line-height: 2;
-  font-style: italic;
+  font-size: 1.1rem;
 }
 
-/* =========================================
-   Footer
-========================================= */
-footer {
-  padding: 5rem 0 3rem;
-  text-align: center;
-  border-top: 1px solid var(--border-color);
-  background: linear-gradient(to top, #000, transparent);
-}
-
-.social-links {
+.social-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 2rem;
-  margin-bottom: 3rem;
+  justify-content: flex-end;
 }
 
-.social-links a {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
+.social-list a {
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.social-links a:hover {
-  color: var(--gold-light);
-}
-
-.email {
-  margin-bottom: 2rem;
-}
-
-.email a {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--text-primary);
-  letter-spacing: 1px;
-}
-
-.email a:hover {
-  color: var(--gold-light);
-}
-
-.copyright {
-  color: #444;
   font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
-/* =========================================
-   Animations (Triggered by JS)
-========================================= */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  will-change: opacity, visibility;
+.social-list a:hover {
+  color: var(--gold);
 }
 
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* =========================================
-   Responsive Design (Mobile)
-========================================= */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 3.5rem; }
-  
-  .latest-grid {
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .editorial-hero, .split-container, .split-footer {
     grid-template-columns: 1fr;
     gap: 3rem;
-    padding: 2rem;
-    text-align: center;
   }
-  
-  .platform-icons {
-    justify-content: center;
+  .hero-right {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
   }
-  
-  .section-title { font-size: 2rem; }
-  
-  .release-info h3 { font-size: 2.2rem; }
+  .album-card { width: 280px; }
+  .social-list { justify-content: flex-start; margin-top: 2rem; }
 }
