@@ -244,6 +244,77 @@ font-size:17px;
 }
 
 }
+```css
+.song-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+margin-top:45px;
+
+}
+
+.song-card{
+
+background:#111;
+
+border:1px solid #202020;
+
+border-radius:18px;
+
+padding:30px;
+
+transition:.35s;
+
+}
+
+.song-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#d4af37;
+
+box-shadow:0 15px 40px rgba(212,175,55,.15);
+
+}
+
+.song-card h3{
+
+font-size:24px;
+
+margin-bottom:10px;
+
+font-family:"Cormorant Garamond",serif;
+
+}
+
+.song-card p{
+
+color:#aaaaaa;
+
+margin-bottom:20px;
+
+}
+
+.song-card a{
+
+color:#d4af37;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
+.contact{
+
+text-align:center;
+
+}
+```
 
 </style>
 
@@ -329,11 +400,135 @@ Whether it is a ghazal, a nostalgic retro reinterpretation or an original compos
 
 </section>
 
+```html
+<section class="featured">
+
+<div class="container">
+
+<h2>Featured Poetry</h2>
+
+<div class="song-grid">
+
+<div class="song-card">
+
+<h3>Dil-e-Nadaan Tujhe Hua Kya Hai</h3>
+
+<p>Mirza Ghalib</p>
+
+<a href="https://open.spotify.com/artist/7iVKJNBCpjJNBDYlTeuj5M?si=Tm-79lGXQIaxLOWTPDIaag" target="_blank">Listen on Spotify →</a>
+
+</div>
+
+<div class="song-card">
+
+<h3>Hazaaron Khwahishen Aisi</h3>
+
+<p>Mirza Ghalib</p>
+
+<a href="https://open.spotify.com/artist/7iVKJNBCpjJNBDYlTeuj5M?si=Tm-79lGXQIaxLOWTPDIaag" target="_blank">Listen on Spotify →</a>
+
+</div>
+
+<div class="song-card">
+
+<h3>Yeh Na Thi Hamari Qismat</h3>
+
+<p>Mirza Ghalib</p>
+
+<a href="https://open.spotify.com/artist/7iVKJNBCpjJNBDYlTeuj5M?si=Tm-79lGXQIaxLOWTPDIaag" target="_blank">Listen on Spotify →</a>
+
+</div>
+
+<div class="song-card">
+
+<h3>Kuch To Hawa Bhi Sard Thi</h3>
+
+<p>Bashir Badr</p>
+
+<a href="https://open.spotify.com/artist/7iVKJNBCpjJNBDYlTeuj5M?si=Tm-79lGXQIaxLOWTPDIaag" target="_blank">Listen on Spotify →</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="youtube">
+
+<div class="container">
+
+<h2>Popular on YouTube</h2>
+
+<div class="song-grid">
+
+<div class="song-card">
+
+<h3>Majboor</h3>
+
+<p>67K+ Views</p>
+
+<a href="https://www.youtube.com/@TheSukoonLab" target="_blank">Watch →</a>
+
+</div>
+
+<div class="song-card">
+
+<h3>Aaj Ruswa</h3>
+
+<p>Popular Cover</p>
+
+<a href="https://www.youtube.com/@TheSukoonLab" target="_blank">Watch →</a>
+
+</div>
+
+<div class="song-card">
+
+<h3>Wo Humsafar Tha</h3>
+
+<p>Modern Reimagining</p>
+
+<a href="https://www.youtube.com/@TheSukoonLab" target="_blank">Watch →</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<div class="container">
+
+<h2>Stay Connected</h2>
+
+<div class="platform-grid">
+
+<a href="https://push.fm/fl/thesukoonlab" target="_blank">🎧 Listen Everywhere</a>
+
+<a href="https://www.instagram.com/the.sukoon.lab" target="_blank">Instagram</a>
+
+<a href="https://x.com/thesukoonlab" target="_blank">X (Twitter)</a>
+
+<a href="mailto:thesukoonlab@gmail.com">Email</a>
+
+</div>
+
+</div>
+
+</section>
+
 <footer>
 
-© 2026 The Sukoon Lab
+<p>© 2026 The Sukoon Lab</p>
+
+<p style="margin-top:10px;color:#999;">Keeping Timeless Urdu Poetry Alive Through Modern Music</p>
 
 </footer>
+```
 
 </body>
 </html>
