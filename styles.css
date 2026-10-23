@@ -119,3 +119,8 @@
  .home-hero.architectural-hero{background-size:cover,230% auto;background-position:center,0% 43%}
  .home-hero .hero-urdu{display:none}
 }
+
+.footer-all-links{margin:12px 0 16px}
+.footer-all-links a{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(196,155,88,.65);border-radius:999px;padding:9px 16px;color:#e5c58d;font-size:12px;letter-spacing:.3px;transition:background .2s,color .2s}
+.footer-all-links a:hover{background:#e5c58d;color:#102b2b}
+.social-links a[href="https://push.fm/fl/thesukoonlab"]{border-color:var(--gold);color:var(--gold2)}
