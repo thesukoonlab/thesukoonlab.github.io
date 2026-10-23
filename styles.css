@@ -82,3 +82,40 @@
  .music-hero.architectural-hero{background-position:center,58% center}
  .poet-hero-bg{background-size:cover,180% auto;background-position:center,left 35%}
 }
+
+
+/* Focused visual correction after live-site review: remove embedded cover typography
+   from the home hero and stop release artwork being mistaken for historical portraits. */
+.home-hero.architectural-hero{
+  background-image:
+    linear-gradient(90deg,rgba(10,28,27,.94) 0%,rgba(10,28,27,.80) 35%,rgba(10,28,27,.32) 67%,rgba(10,28,27,.22) 100%),
+    url('The_Sukoon_Lab_Mohe_Apne_Hi_Rang_Mein_Cover_3000x3000.png');
+  background-size:cover,155% auto;
+  background-position:center,0% 43%;
+  background-repeat:no-repeat;
+}
+.home-hero .hero-urdu{
+  right:4%;top:25%;width:23%;max-width:290px;
+  writing-mode:horizontal-tb;text-align:center;line-height:1.9;
+  font-size:clamp(17px,2vw,26px);color:#f1d6a3;
+  text-shadow:0 2px 16px #10201d;
+}
+.poet-directory-card:nth-child(7) .portrait-frame,
+.poet-directory-card:nth-child(10) .portrait-frame{
+  position:relative;display:grid;place-items:center;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 35%,#3c5b50 0%,#173432 55%,#0d2221 100%);
+}
+.poet-directory-card:nth-child(7) .portrait-frame img,
+.poet-directory-card:nth-child(10) .portrait-frame img{opacity:0}
+.poet-directory-card:nth-child(7) .portrait-frame::after,
+.poet-directory-card:nth-child(10) .portrait-frame::after{
+  content:"HISTORICAL PORTRAIT NOT VERIFIED";
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  padding:16px;text-align:center;color:#e5c58d;
+  font:600 10px var(--sans);letter-spacing:2px;line-height:1.8;
+  border:1px solid rgba(229,197,141,.22);margin:12px;
+}
+@media(max-width:620px){
+ .home-hero.architectural-hero{background-size:cover,230% auto;background-position:center,0% 43%}
+ .home-hero .hero-urdu{display:none}
+}
