@@ -181,3 +181,17 @@
   background-size:cover,cover;background-position:center,65% center;
  }
 }
+
+/* Poet profile catalogue: every credited release, playable in place. */
+.poet-release-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.poet-release-count{font:italic 12px var(--serif);color:#766850;margin:0 0 12px}
+.poet-release-grid .release-card{min-width:0}
+.poet-release-grid .release-art{aspect-ratio:16/9}
+.poet-release-grid .release-body h3{font-size:16px;line-height:1.12}
+.poet-release-grid .release-links{font-size:9px;gap:8px}
+.poet-release-grid .release-links a{white-space:nowrap}
+.poet-profile-page .related-poets .section-heading h2{font-size:34px}
+.poet-profile-page .related-grid a{min-width:0}
+.poet-profile-page .related-grid img{aspect-ratio:1.1;object-fit:cover}
+@media(max-width:850px){.poet-release-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.poet-release-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.poet-release-grid .release-body h3{font-size:14px}.poet-release-grid .release-links{font-size:8px}.poet-profile-page .related-poets .section-heading h2{font-size:29px}}
