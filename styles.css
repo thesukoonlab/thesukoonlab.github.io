@@ -286,3 +286,9 @@
   .poet-hero .poet-portrait{right:0 !important;width:38% !important;height:62% !important;bottom:5% !important}
   .poet-hero .poet-portrait span{font-size:6px !important;letter-spacing:.5px !important}
 }
+
+
+/* The Sukoon Lab emblem: a crescent, sound pulse and poetic flourish. */
+.join-mark{flex:0 0 43px;display:grid;place-items:center;padding:3px;color:var(--gold2)}
+.join-mark-svg{display:block;width:100%;height:100%;max-width:43px;filter:drop-shadow(0 0 5px rgba(229,197,141,.12))}
+@media(max-width:620px){.join-mark{flex-basis:40px}.join-mark-svg{max-width:40px}}
