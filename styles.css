@@ -144,3 +144,40 @@
     pointer-events:none;
   }
 }
+
+
+/* Final hero asset wiring — these are the original, text-free images uploaded to the repo. */
+.home-hero.architectural-hero{
+  isolation:isolate;
+  background-color:#102b2b;
+  background-image:
+    linear-gradient(90deg,rgba(8,25,24,.94) 0%,rgba(8,25,24,.82) 28%,rgba(8,25,24,.42) 54%,rgba(8,25,24,.05) 100%),
+    url('Golden-Hour%20Dance%20in%20a%20Mughal%20Courtyard.png');
+  background-size:cover,cover;
+  background-position:center,62% 43%;
+  background-repeat:no-repeat;
+}
+.home-hero.architectural-hero:before{display:none}
+.home-hero .hero-urdu{display:none}
+.music-hero.architectural-hero{
+  isolation:isolate;
+  background-color:#102b2b;
+  background-image:
+    linear-gradient(90deg,rgba(8,25,24,.92) 0%,rgba(8,25,24,.76) 30%,rgba(8,25,24,.32) 58%,rgba(8,25,24,.06) 100%),
+    url('Sunlit%20Mughal%20Haveli%20Retreat.png');
+  background-size:cover,cover;
+  background-position:center,58% 50%;
+  background-repeat:no-repeat;
+}
+.music-hero.architectural-hero:before,
+.music-hero.architectural-hero:after{display:none}
+@media(max-width:620px){
+ .home-hero.architectural-hero{
+  background-image:linear-gradient(90deg,rgba(8,25,24,.91),rgba(8,25,24,.56) 65%,rgba(8,25,24,.22)),url('Golden-Hour%20Dance%20in%20a%20Mughal%20Courtyard.png');
+  background-size:cover,cover;background-position:center,63% center;
+ }
+ .music-hero.architectural-hero{
+  background-image:linear-gradient(90deg,rgba(8,25,24,.9),rgba(8,25,24,.56) 70%,rgba(8,25,24,.18)),url('Sunlit%20Mughal%20Haveli%20Retreat.png');
+  background-size:cover,cover;background-position:center,65% center;
+ }
+}
