@@ -386,3 +386,29 @@
   letter-spacing:.1px;
   opacity:1;
 }
+
+
+/* Poet credit: understated centred italic pill-link */
+.release-body .release-poet{
+  display:block;
+  align-self:center;
+  width:max-content;
+  max-width:100%;
+  margin:7px auto 10px;
+  padding:4px 12px 5px;
+  border:1px solid rgba(126,99,61,.48);
+  border-radius:999px;
+  color:#7e633d;
+  background:transparent;
+  text-align:center;
+  text-decoration:none;
+  font:italic 500 12px/1.25 "Cormorant Garamond",serif;
+  letter-spacing:.15px;
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+.release-body .release-poet:hover{
+  color:#2f4438;
+  background:rgba(212,167,101,.13);
+  border-color:#a9854f;
+  text-decoration:none;
+}
