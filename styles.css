@@ -376,3 +376,13 @@
  .release-links .platform-link svg{width:19px;height:19px;flex-basis:19px}
  .release-links .platform-link b{font-size:10px}
 }
+
+
+/* Improve poet credit readability on Music Room release cards */
+.release-body .release-poet{
+  margin:5px 0 8px;
+  color:#4a422c;
+  font:600 12px/1.35 "DM Sans",sans-serif;
+  letter-spacing:.1px;
+  opacity:1;
+}
