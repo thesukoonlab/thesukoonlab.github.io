@@ -473,3 +473,25 @@
  .release-links .platform-link{min-height:26px;font-size:9px}
  .release-links .platform-link svg{width:17px;height:17px;flex-basis:17px}
 }
+
+
+/* Consistent wide artwork and streaming links across Music Room and poet profiles */
+.music-page .release-grid:not(.poet-release-grid) .release-art{aspect-ratio:16/9}
+.music-page .release-grid:not(.poet-release-grid) .release-art img{object-fit:cover}
+.music-page .release-grid:not(.poet-release-grid) .release-body{padding:10px 12px 12px}
+.music-page .release-grid:not(.poet-release-grid) .release-body h3{line-height:1.12;margin-bottom:5px}
+.music-page .release-grid:not(.poet-release-grid) .release-links{margin-top:auto;padding-top:10px}
+.poet-release-grid .release-links{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
+.release-links .plain-video-link{font:500 10px/1.2 "DM Sans",sans-serif;color:#6f6049;text-decoration:none}
+.release-links .plain-video-link:hover{color:#8a6c42}
+.poet-release-grid .release-links .platform-link{display:inline-flex;align-items:center;gap:5px;min-height:26px;padding:0;border:0;border-radius:0;background:transparent;color:#3b3a30;text-decoration:none;font:500 10px/1.2 "DM Sans",sans-serif;white-space:nowrap}
+.poet-release-grid .release-links .platform-link svg{width:19px;height:19px;flex:0 0 19px}
+.poet-release-grid .release-links .platform-link b{font-size:10px;font-weight:400;color:#9b835f;margin-left:0}
+.poet-release-grid .release-links .platform-link:hover{background:transparent;border:0;transform:none;color:#8a6c42;opacity:.8}
+@media(max-width:620px){
+ .music-page .release-grid:not(.poet-release-grid) .release-art{aspect-ratio:16/9}
+ .music-page .release-grid:not(.poet-release-grid) .release-body{padding:8px}
+ .poet-release-grid .release-links{gap:7px 9px}
+ .poet-release-grid .release-links .platform-link{font-size:8px}
+ .poet-release-grid .release-links .platform-link svg{width:16px;height:16px;flex-basis:16px}
+}
