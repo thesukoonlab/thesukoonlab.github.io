@@ -234,3 +234,55 @@
  .poet-portrait span{font-size:6px;letter-spacing:.5px}
  .overview-photo .photo-source{font-size:7px}
 }
+
+
+/* Poet profile heroes: return to the original full-height portrait treatment.
+   The same portrait artwork fills the hero backdrop and the portrait itself is
+   shown naturally on the right, without a framed/cropped card. */
+.poet-hero-bg{
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+  opacity:1 !important;
+}
+.poet-hero .poet-portrait{
+  position:absolute !important;
+  right:5% !important;
+  bottom:0 !important;
+  height:94% !important;
+  width:34% !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  overflow:visible !important;
+  border:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+  opacity:1 !important;
+}
+.poet-hero .poet-portrait img{
+  display:block !important;
+  width:auto !important;
+  height:100% !important;
+  max-width:100% !important;
+  object-fit:contain !important;
+  object-position:bottom center !important;
+  filter:sepia(.15) contrast(1.05) !important;
+  mask-image:linear-gradient(to bottom,black 88%,transparent 100%) !important;
+}
+.poet-hero .poet-portrait span{
+  right:0 !important;
+  bottom:12px !important;
+  padding:0 !important;
+  background:transparent !important;
+  font-size:7px !important;
+  letter-spacing:2px !important;
+  color:#edcf9a !important;
+}
+@media(max-width:850px){
+  .poet-hero .poet-portrait{right:2% !important;width:36% !important;height:80% !important}
+}
+@media(max-width:620px){
+  .poet-hero .poet-portrait{right:0 !important;width:38% !important;height:62% !important;bottom:5% !important}
+  .poet-hero .poet-portrait span{font-size:6px !important;letter-spacing:.5px !important}
+}
