@@ -16,3 +16,28 @@
 .release-art:has(.youtube-inline-player){aspect-ratio:16/9;background:#111}
 .release-art img{object-fit:cover}
 @media(max-width:620px){.rang-subtitle{font-size:18px!important}}
+
+/* Poet library + grounded hero imagery */
+.home-hero.architectural-hero{background-color:#152d29;background-image:linear-gradient(90deg,rgba(12,28,26,.9) 0%,rgba(12,28,26,.62) 43%,rgba(12,28,26,.06) 100%),url('The_Sukoon_Lab_Mohe_Apne_Hi_Rang_Mein_Cover_3000x3000.png');background-position:center,right 42%;background-size:cover,auto 132%;background-repeat:no-repeat}
+.music-hero.architectural-hero{background-color:#142d2b;background-image:linear-gradient(90deg,rgba(12,29,28,.84),rgba(12,29,28,.3) 58%,rgba(12,29,28,.15)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Humayun%27s_Tomb%2C_Delhi.jpg?width=1800');background-position:center,center 42%;background-size:cover,cover;background-repeat:no-repeat}
+.poet-hero-bg{background-image:linear-gradient(90deg,rgba(9,30,29,.72),rgba(10,28,27,.22)),url('The_Sukoon_Lab_Mohe_Apne_Hi_Rang_Mein_Cover_3000x3000.png');background-position:center,right 36%;background-size:cover,auto 180%;background-repeat:no-repeat;opacity:1}
+.poet-cards-featured{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.poet-tile img{object-fit:cover;object-position:center 25%;background:#1a302e}
+.poet-directory{padding:36px clamp(18px,4vw,55px) 50px}
+.poet-directory-intro{max-width:740px;margin:0 auto 28px;text-align:center}
+.poet-directory-intro h1{font:600 clamp(40px,6vw,66px)/.95 var(--serif);margin:0 0 12px}
+.poet-directory-intro p{font:16px/1.5 var(--serif);color:#6a5d48}
+.poet-directory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.poet-directory-card{display:flex;flex-direction:column;background:#f7ecd7;border:1px solid #d5bf97;color:#302b22;min-width:0;box-shadow:0 4px 15px #32240f12}
+.poet-directory-card .portrait-frame{height:245px;overflow:hidden;background:#213936}
+.poet-directory-card img{width:100%;height:100%;object-fit:cover;object-position:center 24%;transition:transform .35s ease}
+.poet-directory-card:hover img{transform:scale(1.035)}
+.poet-directory-copy{padding:13px 14px 15px}
+.poet-directory-copy .song-count{font:700 9px var(--sans);letter-spacing:1.5px;text-transform:uppercase;color:#987342}
+.poet-directory-copy h2{font:600 24px/1 var(--serif);margin:7px 0}
+.poet-directory-copy p{font:14px/1.35 var(--serif);color:#6a5c46;margin:0 0 11px}
+.poet-directory-actions{display:flex;justify-content:space-between;gap:8px;font:600 10px var(--sans);padding-top:9px;border-top:1px solid #d7c5a3}
+.poet-directory-actions a{color:#74532c;text-decoration:underline;text-underline-offset:3px}
+.image-credit-note{font:10px/1.4 var(--sans);color:#7a6a51;margin-top:10px}
+@media(max-width:850px){.poet-cards-featured{grid-template-columns:repeat(3,minmax(0,1fr))}.poet-directory-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.poet-directory-card .portrait-frame{height:210px}}
+@media(max-width:620px){.home-hero.architectural-hero{background-size:cover,auto 92%;background-position:center,right -30px}.music-hero.architectural-hero{background-position:center,60% center}.poet-hero-bg{background-position:center,right -25px;background-size:cover,auto 130%}.poet-cards-featured{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.poet-directory{padding:25px 13px 35px}.poet-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.poet-directory-card .portrait-frame{height:175px}.poet-directory-copy{padding:10px}.poet-directory-copy h2{font-size:20px}.poet-directory-copy p{font-size:12px}.poet-directory-actions{font-size:9px;flex-wrap:wrap}}
