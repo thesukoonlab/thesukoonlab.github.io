@@ -41,3 +41,44 @@
 .image-credit-note{font:10px/1.4 var(--sans);color:#7a6a51;margin-top:10px}
 @media(max-width:850px){.poet-cards-featured{grid-template-columns:repeat(3,minmax(0,1fr))}.poet-directory-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.poet-directory-card .portrait-frame{height:210px}}
 @media(max-width:620px){.home-hero.architectural-hero{background-size:cover,auto 92%;background-position:center,right -30px}.music-hero.architectural-hero{background-position:center,60% center}.poet-hero-bg{background-position:center,right -25px;background-size:cover,auto 130%}.poet-cards-featured{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.poet-directory{padding:25px 13px 35px}.poet-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.poet-directory-card .portrait-frame{height:175px}.poet-directory-copy{padding:10px}.poet-directory-copy h2{font-size:20px}.poet-directory-copy p{font-size:12px}.poet-directory-actions{font-size:9px;flex-wrap:wrap}}
+
+
+/* Oct 2026 visual refresh: intentional art direction and legible hero typography */
+.home-hero.architectural-hero{
+  background-color:#102b2b;
+  background-image:
+    linear-gradient(90deg,rgba(10,28,27,.94) 0%,rgba(10,28,27,.82) 34%,rgba(10,28,27,.32) 60%,rgba(10,28,27,.08) 100%),
+    url('The_Sukoon_Lab_Mohe_Apne_Hi_Rang_Mein_Cover_3000x3000.png');
+  background-size:cover, 118% auto;
+  background-position:center, left 44%;
+  background-repeat:no-repeat;
+}
+.home-hero:after{display:none}
+.home-hero .hero-urdu{
+  writing-mode:horizontal-tb;
+  right:5%;top:22%;width:26%;max-width:300px;
+  text-align:center;line-height:1.8;font-size:clamp(18px,2.2vw,28px);
+  color:#f1d6a3;text-shadow:0 2px 16px #10201d;
+}
+.music-hero.architectural-hero{
+  background-color:#122b29;
+  background-image:
+    linear-gradient(90deg,rgba(10,27,26,.82),rgba(10,27,26,.38) 52%,rgba(10,27,26,.18)),
+    url('https://commons.wikimedia.org/wiki/Special:FilePath/Mughal%20Architecture%20at%20Golkonda.jpg?width=1800');
+  background-size:cover,cover;
+  background-position:center,center 48%;
+}
+.music-hero.architectural-hero:before{
+  background:linear-gradient(0deg,rgba(12,32,30,.72),transparent 44%);
+}
+.poet-hero-bg{
+  background-image:linear-gradient(90deg,rgba(9,30,29,.82),rgba(10,28,27,.32)),url('The_Sukoon_Lab_Mohe_Apne_Hi_Rang_Mein_Cover_3000x3000.png');
+  background-size:cover,125% auto;background-position:center,left 38%;background-repeat:no-repeat;opacity:1;
+}
+.quote-banner{background-position:center 47%}
+@media(max-width:620px){
+ .home-hero.architectural-hero{background-size:cover,190% auto;background-position:center,left 43%}
+ .home-hero .hero-urdu{display:none}
+ .music-hero.architectural-hero{background-position:center,58% center}
+ .poet-hero-bg{background-size:cover,180% auto;background-position:center,left 35%}
+}
