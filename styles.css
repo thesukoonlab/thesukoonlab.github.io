@@ -412,3 +412,64 @@
   border-color:#a9854f;
   text-decoration:none;
 }
+
+
+/* Premium editorial finish: quieter poet credits and lighter platform links */
+.release-body .release-poet{
+  display:block;
+  align-self:center;
+  width:auto;
+  max-width:100%;
+  margin:8px auto 12px;
+  padding:2px 0 3px;
+  border:0;
+  border-bottom:1px solid rgba(153,119,69,.52);
+  border-radius:0;
+  color:#8a6c42;
+  background:transparent;
+  text-align:center;
+  text-decoration:none;
+  font:italic 500 13px/1.35 "Cormorant Garamond",serif;
+  letter-spacing:.2px;
+  transition:color .18s ease,border-color .18s ease;
+}
+.release-body .release-poet:hover{
+  color:#34483d;
+  background:transparent;
+  border-color:#34483d;
+  text-decoration:none;
+}
+.release-links{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  flex-wrap:wrap;
+  gap:10px 13px;
+  border-top:1px solid rgba(122,88,43,.18);
+  padding-top:11px;
+  margin-top:auto;
+}
+.release-links .platform-link{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  min-height:26px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#3b3a30;
+  text-decoration:none;
+  font:500 10px/1.2 "DM Sans",sans-serif;
+  white-space:nowrap;
+  transition:opacity .18s ease,color .18s ease;
+}
+.release-links .platform-link svg{width:19px;height:19px;flex:0 0 19px}
+.release-links .platform-link b{font-size:10px;font-weight:400;color:#9b835f;margin-left:0}
+.release-links .platform-link:hover{background:transparent;border:0;transform:none;color:#8a6c42;opacity:.8}
+.release-links .spotify-link,.release-links .apple-link,.release-links .ytmusic-link{border:0}
+@media(max-width:620px){
+ .release-links{gap:8px 10px;padding-top:9px}
+ .release-links .platform-link{min-height:26px;font-size:9px}
+ .release-links .platform-link svg{width:17px;height:17px;flex-basis:17px}
+}
