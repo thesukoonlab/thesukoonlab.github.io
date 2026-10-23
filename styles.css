@@ -195,3 +195,26 @@
 .poet-profile-page .related-grid img{aspect-ratio:1.1;object-fit:cover}
 @media(max-width:850px){.poet-release-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:620px){.poet-release-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.poet-release-grid .release-body h3{font-size:14px}.poet-release-grid .release-links{font-size:8px}.poet-profile-page .related-poets .section-heading h2{font-size:29px}}
+
+/* Homepage poet cards: match the music cards' full-width grid and image proportions. */
+.poet-preview .poet-cards-featured{
+  max-width:none;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+.poet-preview .poet-tile{padding:7px}
+.poet-preview .poet-tile img{
+  width:100%;
+  height:auto;
+  aspect-ratio:1.4;
+  object-fit:contain;
+  object-position:center;
+  background:#e8d8b9;
+}
+@media(max-width:850px){
+ .poet-preview .poet-cards-featured{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+}
+@media(max-width:620px){
+ .poet-preview .poet-cards-featured{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .poet-preview .poet-tile img{aspect-ratio:1.4}
+}
