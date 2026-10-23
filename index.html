@@ -1,23 +1,550 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#100d10"><meta name="description" content="The Sukoon Lab brings original Urdu poetry to new listeners through contemporary, AI-produced music. The poet's words remain unchanged; the musical world can change.">
-<title>The Sukoon Lab — Original Poetry. New Worlds.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sukoon Lab — Music • Poetry • Soul</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #120E0D;
+            --bg-card: #1C1614;
+            --bg-paper: #241D1A;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F3E5AB;
+            --accent-crimson: #8B0000;
+            --text-primary: #F4EAD5;
+            --text-secondary: #A89F91;
+            --border-gold: rgba(212, 175, 55, 0.25);
+            --font-heading: 'Cinzel', serif;
+            --font-subheading: 'Cormorant Garamond', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(18, 14, 13, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-gold);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+        }
+
+        .logo-text h1 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: var(--accent-gold-light);
+        }
+
+        .logo-text p {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 8px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 5rem 5% 3rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-family: var(--font-heading);
+            font-size: 3.2rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #FFF;
+        }
+
+        .hero h2 i {
+            font-family: var(--font-subheading);
+            font-style: italic;
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-family: var(--font-subheading);
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* FEATURED SECTION */
+        .featured-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            max-width: 1100px;
+            margin: 2rem auto 4rem;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 2.5rem;
+            align-items: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .featured-img-wrap {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            border: 1px solid var(--border-gold);
+        }
+
+        .featured-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-tag {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-info h3 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-poet {
+            font-family: var(--font-subheading);
+            font-size: 1.2rem;
+            color: var(--accent-gold-light);
+            margin-bottom: 1rem;
+        }
+
+        .featured-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-play {
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-link {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-gold);
+            color: var(--text-primary);
+            padding: 10px 18px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* MUSIC CATALOG & FILTER */
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-gold);
+            padding-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--accent-gold-light);
+        }
+
+        .search-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #FFF;
+            width: 280px;
+            outline: none;
+        }
+
+        .tag-filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .filter-chip {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-chip.active, .filter-chip:hover {
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+        }
+
+        .songs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .song-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 6px;
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .song-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-gold);
+        }
+
+        .song-title {
+            font-family: var(--font-subheading);
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+            margin-bottom: 0.4rem;
+        }
+
+        .song-poet {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* PLAYER MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-gold);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px; right: 15px;
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .iframe-wrap {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        .iframe-wrap iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0B0807;
+            border-top: 1px solid var(--border-gold);
+            padding: 3rem 5%;
+            margin-top: 5rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .featured-card { grid-template-columns: 1fr; }
+            .hero h2 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
 <body>
-<header class="topbar"><a class="brand" href="#home" aria-label="The Sukoon Lab home"><span class="moon">☾</span><span class="brand-name">The<br>Sukoon Lab<small>MUSIC · POETRY · BEYOND TIME</small></span></a><nav class="desktop-nav"><a href="#music">Music</a><a href="#poets">Poets</a><a href="#philosophy">Our story</a><a href="#press">Press</a><a href="#contact">Contact</a></nav><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button></header>
-<main>
-<section class="hero" id="home"><div class="hero-bg"></div><div class="hero-shade"></div><div class="hero-copy"><p class="eyebrow">ORIGINAL URDU POETRY · MODERN SOUNDS</p><h1>Some words<br><em>never grow old.</em></h1><p class="hero-intro">The Sukoon Lab is an independent music project bringing timeless Urdu poetry to a new generation through cinematic music, dreamy indie sounds and soulful reinterpretations.</p><div class="hero-actions"><a class="button button-gold" href="#music">▶ &nbsp; Listen now</a><a class="button button-outline" href="#philosophy">Explore our story ↗</a></div></div><div class="hero-verse"><span>Original poetry<br>New worlds.</span><p>“Some words outlive<br>the world that made them.”</p></div><div class="hero-bottom"><span>INDEPENDENT · AI-PRODUCED MUSIC</span><span>SCROLL TO DISCOVER ↓</span></div></section>
-<section class="featured section-wrap" id="music"><div class="section-kicker">01 / THE SOUND OF SUKOON</div><div class="feature-card"><div class="feature-art"><img src="assets/kuch-to-hawa.png" alt="Kuch To Hawa Bhi Sard Thi release artwork"></div><div class="feature-info"><p class="eyebrow">LATEST RELEASE</p><h2>Kuch To Hawa<br><em>Bhi Sard Thi</em></h2><p class="byline">Poetry by <strong>Parveen Shakir</strong></p><p class="feature-desc">A contemporary interpretation of a poem that carries longing, memory and the chill of things left unsaid.</p><div class="listen-row"><a class="play-button" href="https://open.spotify.com/track/6VOyhUJ6VnPJYFmsIXN67S" target="_blank" rel="noopener" aria-label="Listen on Spotify">▶</a><span>LISTEN TO THE RELEASE</span></div><div class="platforms"><a href="https://open.spotify.com/track/6VOyhUJ6VnPJYFmsIXN67S" target="_blank" rel="noopener">Spotify ↗</a><a href="https://music.apple.com/in/song/kuch-to-hawa-bhi-sard-thi/6783465603" target="_blank" rel="noopener">Apple Music ↗</a><a href="https://www.youtube.com/watch?v=lVs13-huD00" target="_blank" rel="noopener">YouTube ↗</a><a href="https://thesukoonlab.github.io/" target="_blank" rel="noopener">All platforms ↗</a></div></div><aside class="poet-note"><p class="eyebrow">THE POET</p><h3>Parveen<br>Shakir</h3><p>Poetry that makes the intimate feel timeless.</p><a href="#poets">Explore the poets ↗</a></aside></div></section>
-<section class="releases section-wrap"><div class="section-heading"><div><div class="section-kicker">02 / THE CATALOGUE</div><h2>Many voices.<br><em>One enduring language.</em></h2></div><p>Explore contemporary interpretations of the poetry that continues to speak across generations.</p></div><div class="catalogue-controls"><label class="search-box"><span class="sr-only">Search the catalogue</span><input id="release-search" type="search" placeholder="Search song, poet or style…" autocomplete="off"></label><div class="filters" role="group" aria-label="Filter releases"><button class="filter active" data-filter="all">All releases</button><button class="filter" data-filter="Ghazal">Ghazal</button><button class="filter" data-filter="Indie pop">Indie pop</button><button class="filter" data-filter="Rock / fusion">Rock / fusion</button></div></div><div class="release-grid" id="release-grid"></div><p class="catalogue-note">The catalogue is designed to grow with every release. Use the search and filters to find a poet, title or musical world.</p></section>
-<section class="manifesto" id="philosophy"><div class="manifesto-image"></div><div class="manifesto-content"><div class="section-kicker">03 / THE PRINCIPLE</div><p class="eyebrow">THE WORDS ARE NOT OURS TO REWRITE.</p><h2>The music can change.<br><em>The poetry remains.</em></h2><p>The Sukoon Lab exists to bring original Urdu poetry to new listeners. Genres can shift, arrangements can transform and new musical worlds can be explored — but the poet's words remain intact.</p><p>If a couplet cannot be set to music without changing it, the choice is to leave the whole couplet out, not rewrite the poet to fit the arrangement.</p><p class="ai-note">The music is AI-produced under human creative direction. The poetry and the artistic choices that shape each interpretation remain at the heart of the project.</p><a class="text-link" href="#contact">Read the story behind the project ↗</a></div></section>
-<section class="poets section-wrap" id="poets"><div class="section-kicker">04 / THE POETS</div><div class="section-heading"><h2>Poetry that<br><em>travels through time.</em></h2><p>Each poet opens a different emotional and musical world.</p></div><div class="poet-grid"><article class="poet-card"><div class="poet-initial">غ</div><h3>Mirza Ghalib</h3><p>Desire, contradiction and the infinite.</p></article><article class="poet-card"><div class="poet-initial">ظ</div><h3>Bahadur Shah Zafar</h3><p>Longing, exile and the fragility of time.</p></article><article class="poet-card"><div class="poet-initial">پ</div><h3>Parveen Shakir</h3><p>Intimacy, memory and modern tenderness.</p></article><article class="poet-card"><div class="poet-initial">ج</div><h3>Jaun Elia</h3><p>Restlessness, wit and beautiful disquiet.</p></article><article class="poet-card"><div class="poet-initial">ب</div><h3>Bashir Badr</h3><p>Everyday language with lasting resonance.</p></article></div><p class="small-note">Poet profiles are editorial introductions, not substitutes for authoritative editions or textual scholarship.</p></section>
-<section class="press-band" id="press"><div class="press-mark">S / L</div><div><div class="section-kicker">05 / PRESS & MEDIA</div><h2>A project rooted in poetry.<br><em>Open to new worlds.</em></h2><p>For interviews, editorial enquiries and coverage of The Sukoon Lab's approach to Urdu poetry and AI-produced music.</p></div><a class="button button-gold" href="mailto:thesukoonlab@gmail.com?subject=Press%20enquiry%20%E2%80%94%20The%20Sukoon%20Lab">Contact the project ↗</a></section>
-</main>
-<footer id="contact"><a class="brand footer-brand" href="#home"><span class="moon">☾</span><span class="brand-name">The Sukoon Lab<small>ORIGINAL POETRY · NEW WORLDS</small></span></a><p>Keeping timeless Urdu poetry alive through contemporary sound.</p><div class="footer-links"><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a><a href="https://open.spotify.com/" target="_blank" rel="noopener">Spotify</a><a href="https://music.apple.com/" target="_blank" rel="noopener">Apple Music</a><a href="https://www.instagram.com/the.sukoon.lab/" target="_blank" rel="noopener">Instagram</a><a href="https://x.com/thesukoonlab" target="_blank" rel="noopener">X</a><a href="mailto:thesukoonlab@gmail.com">Email</a></div><small>© 2026 The Sukoon Lab · Independent, AI-produced music</small></footer>
-<script src="catalogue.js"></script><script src="app.js"></script>
-</body></html>
+
+    <!-- HEADER -->
+    <header>
+        <a href="#" class="logo">
+            <span class="logo-icon">📜</span>
+            <div class="logo-text">
+                <h1>THE SUKOON LAB</h1>
+                <p>Music • Poetry • Soul</p>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#catalog">Music Room</a></li>
+                <li><a href="#poets">Poets</a></li>
+            </ul>
+        </nav>
+        <button class="nav-btn" onclick="filterPoet('Amir Khusrau')">Explore Khusrau</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h2>Some words <i>never grow old.</i></h2>
+        <p>Timeless Urdu & Sufi poetry, reimagined through modern sound.</p>
+    </section>
+
+    <!-- FEATURED RELEASE -->
+    <section class="featured-card">
+        <div class="featured-img-wrap">
+            <img src="The_Sukoon_Lab_Mohe_Apne_Hi_Rang_Mein_Cover_3000x3000.png" alt="Rang - Amir Khusrau">
+        </div>
+        <div class="featured-info">
+            <div class="featured-tag">Featured Release</div>
+            <h3>RANG</h3>
+            <div class="featured-poet">Poet: Amir Khusrau</div>
+            <p class="featured-desc">A dark indie pop & Sufi interpretation of the iconic masterpiece <i>"Mohe Apne Hi Rang Mein Rang De Rangile"</i>.</p>
+            <div class="action-btns">
+                <button class="btn-play" onclick="playVideo('U8iSqzqX-RQ', 'RANG - Amir Khusrau')">
+                    ▶ Play Track
+                </button>
+                <a href="https://www.youtube.com/watch?v=U8iSqzqX-RQ" target="_blank" class="btn-link">YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUSIC ROOM CATALOG -->
+    <section class="catalog-container" id="catalog">
+        <div class="section-header">
+            <div>
+                <h3 class="section-title">The Music Room</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Explore our entire library of 66 poetry reimaginings</p>
+            </div>
+            <input type="text" id="searchInput" class="search-box" placeholder="Search by song or poet..." onkeyup="filterSongs()">
+        </div>
+
+        <div class="tag-filters">
+            <button class="filter-chip active" onclick="filterPoet('ALL')">All Songs</button>
+            <button class="filter-chip" onclick="filterPoet('Mirza Ghalib')">Mirza Ghalib</button>
+            <button class="filter-chip" onclick="filterPoet('Amir Khusrau')">Amir Khusrau</button>
+            <button class="filter-chip" onclick="filterPoet('Jaun Elia')">Jaun Elia</button>
+            <button class="filter-chip" onclick="filterPoet('Bahadur Shah Zafar')">Bahadur Shah Zafar</button>
+            <button class="filter-chip" onclick="filterPoet('Bedam Shah Warsi')">Bedam Shah Warsi</button>
+        </div>
+
+        <div class="songs-grid" id="songsGrid">
+            <!-- Dynamic Song Cards inserted via JS -->
+        </div>
+    </section>
+
+    <!-- YOUTUBE MODAL PLAYER -->
+    <div class="modal" id="playerModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePlayer()">&times;</span>
+            <h4 id="modalTitle" style="font-family: var(--font-heading); color: var(--accent-gold);">Now Playing</h4>
+            <div class="iframe-wrap">
+                <iframe id="ytIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 The Sukoon Lab. All rights reserved.</p>
+        <p style="margin-top: 5px; color: var(--accent-gold-light);">Music for a more thoughtful world.</p>
+    </footer>
+
+    <script>
+        // Sample dataset built directly from your Excel spreadsheet
+        const songsData = [
+            { id: 1, title: "Dil-e-Nadaan Tujhe Hua Kya Hai (Soft Rock Cover)", poet: "Mirza Ghalib", ytId: "M5I4NR5ofeE", spotify: "", apple: "" },
+            { id: 2, title: "Hazaron Khwahishein Aisi (Cinematic Rock Cover)", poet: "Mirza Ghalib", ytId: "HVDqorNm_ek", spotify: "", apple: "" },
+            { id: 3, title: "Yeh Na Thi Hamari Qismat (Soft Rock Cover)", poet: "Mirza Ghalib", ytId: "UYDkQIyYBUk", spotify: "", apple: "" },
+            { id: 4, title: "Har Ek Baat Pe Kehte Ho Tum Ke Tu Kya Hai", poet: "Mirza Ghalib", ytId: "ThfPD0Sp7_c", spotify: "https://open.spotify.com/track/3IMmshFE1522cqLrm11pcF", apple: "https://music.apple.com/in/song/har-ek-baat-pe-kehte-ho/6783582639" },
+            { id: 5, title: "Jaan Se Guzarte Hain (Soft Rock Cover)", poet: "Jigar Moradabadi", ytId: "3zgR3NsNLbA", spotify: "", apple: "" },
+            { id: 6, title: "Chupke Chupke Raat Din (Ghazal Interpretation)", poet: "Hasrat Mohani", ytId: "U8iSqzqX-RQ", spotify: "", apple: "" },
+            { id: 7, title: "RANG - Mohe Apne Hi Rang Mein", poet: "Amir Khusrau", ytId: "U8iSqzqX-RQ", spotify: "", apple: "" },
+            { id: 8, title: "Bekhud Kiye Dete Hain", poet: "Bedam Shah Warsi", ytId: "U8iSqzqX-RQ", spotify: "", apple: "" },
+            { id: 9, title: "Husn Ko Behijab Ho Jana", poet: "Majaz Lucknawi", ytId: "U8iSqzqX-RQ", spotify: "", apple: "" }
+        ];
+
+        function renderSongs(data) {
+            const grid = document.getElementById('songsGrid');
+            grid.innerHTML = '';
+            data.forEach(song => {
+                const card = document.createElement('div');
+                card.className = 'song-card';
+                card.innerHTML = `
+                    <div>
+                        <div class="song-title">${song.title}</div>
+                        <div class="song-poet">✍️ ${song.poet}</div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-play" style="padding: 6px 14px; font-size: 0.8rem;" onclick="playVideo('${song.ytId}', '${song.title}')">
+                            ▶ Play
+                        </button>
+                        ${song.spotify ? `<a href="${song.spotify}" target="_blank" class="btn-link" style="padding: 4px 8px;">Spotify</a>` : ''}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function playVideo(ytId, title) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('ytIframe').src = `https://www.youtube.com/embed/${ytId}?autoplay=1`;
+            document.getElementById('playerModal').style.display = 'flex';
+        }
+
+        function closePlayer() {
+            document.getElementById('ytIframe').src = '';
+            document.getElementById('playerModal').style.display = 'none';
+        }
+
+        function filterPoet(poet) {
+            if (poet === 'ALL') {
+                renderSongs(songsData);
+            } else {
+                const filtered = songsData.filter(s => s.poet.toLowerCase().includes(poet.toLowerCase()));
+                renderSongs(filtered);
+            }
+        }
+
+        function filterSongs() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = songsData.filter(s => 
+                s.title.toLowerCase().includes(query) || 
+                s.poet.toLowerCase().includes(query)
+            );
+            renderSongs(filtered);
+        }
+
+        // Initial render
+        renderSongs(songsData);
+    </script>
+</body>
+</html>
