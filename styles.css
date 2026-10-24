@@ -495,3 +495,15 @@
  .poet-release-grid .release-links .platform-link{font-size:8px}
  .poet-release-grid .release-links .platform-link svg{width:16px;height:16px;flex-basis:16px}
 }
+
+
+/* Homepage polish: clearer anchors, more readable supporting copy, and a tighter first-screen rhythm */
+:target{scroll-margin-top:calc(var(--header-height, 82px) + 18px)}
+#contact{scroll-margin-top:100px}
+.contact-note{flex-basis:100%;max-width:340px;margin:0 0 5px;color:#d9c6a4;font:italic 15px/1.4 var(--serif)}
+.social-links a[href*="youtube.com/results"]{border-color:var(--gold);color:var(--gold2)}
+@media(min-width:851px){.home-hero{min-height:min(78vh,720px)}}
+@media(min-width:621px) and (max-height:850px){.home-hero{min-height:min(74vh,640px)}.home-hero .hero-inner{padding-top:8px;padding-bottom:8px}}
+@media(max-width:620px){.contact-note{font-size:14px}.home-hero{min-height:420px}}
+/* Keep keyboard navigation visible against both parchment and dark surfaces. */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #d4a85f;outline-offset:3px}
