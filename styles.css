@@ -612,3 +612,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
   .related-grid img,
   .poet-profile-page .related-grid img { height: 145px; }
 }
+
+/* Links from catalogue cards to dedicated poetry/song landing pages */
+.song-detail-link{display:inline-block;margin:.35rem 0 .65rem;color:#b58a3c;font-size:.82rem;font-weight:600;text-decoration:underline;text-underline-offset:3px}.song-detail-link:hover{color:#102c2c}
