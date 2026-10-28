@@ -564,3 +564,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .poet-directory-card .portrait-frame{background:#e6d5b5}
 .poet-directory-card .portrait-frame img{object-fit:contain;object-position:center;transform:none!important}
 .poet-directory-card:hover .portrait-frame img{transform:none}
+
+/* Poet thumbnails across homepage and individual poet pages: show the full source image. */
+.poet-tile img,.related-grid .poet-tile img,.poet-cards-featured .poet-tile img{
+  display:block;
+  width:100%;
+  height:175px;
+  object-fit:contain;
+  object-position:center;
+  background:#e6d5b5;
+}
+@media(max-width:620px){
+  .poet-tile img,.related-grid .poet-tile img,.poet-cards-featured .poet-tile img{height:145px}
+}
