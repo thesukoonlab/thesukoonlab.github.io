@@ -559,3 +559,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .poet-directory-card:nth-child(2) .portrait-frame img{object-position:center 32%}
 .poet-directory-card:nth-child(3) .portrait-frame img{object-position:center 38%}
 .poet-directory-card:nth-child(4) .portrait-frame img{object-position:center 30%}
+
+/* Portraits are source photographs, not thumbnails to be aggressively cropped. */
+.poet-directory-card .portrait-frame{background:#e6d5b5}
+.poet-directory-card .portrait-frame img{object-fit:contain;object-position:center;transform:none!important}
+.poet-directory-card:hover .portrait-frame img{transform:none}
