@@ -507,3 +507,34 @@
 @media(max-width:620px){.contact-note{font-size:14px}.home-hero{min-height:420px}}
 /* Keep keyboard navigation visible against both parchment and dark surfaces. */
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #d4a85f;outline-offset:3px}
+
+/* Homepage: make the four introductory release cards visually symmetrical. */
+.mini-release-grid{align-items:stretch}
+.mini-release{
+  height:100%;
+  min-height:0;
+}
+.mini-release img{
+  display:block;
+  width:100%;
+  aspect-ratio:1.4 / 1;
+  height:auto;
+  object-fit:cover;
+  object-position:center;
+}
+.mini-release b{
+  display:block;
+  min-height:2.2em;
+  line-height:1.1;
+  margin:9px 3px 4px;
+}
+.mini-release small{
+  display:block;
+  min-height:1.35em;
+  line-height:1.2;
+  margin:0 3px 6px;
+}
+@media(max-width:620px){
+  .mini-release-grid{align-items:stretch}
+  .mini-release b{min-height:2.2em;font-size:14px}
+}
