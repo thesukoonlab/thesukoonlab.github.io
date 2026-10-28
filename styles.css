@@ -577,3 +577,38 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 @media(max-width:620px){
   .poet-tile img,.related-grid .poet-tile img,.poet-cards-featured .poet-tile img{height:145px}
 }
+
+
+/* FIX: show complete poet portraits in every card; cover was cutting off heads. */
+.poet-directory-card .portrait-frame {
+  height: auto !important;
+  aspect-ratio: 4 / 3;
+  background: #e6d5b5;
+  overflow: hidden;
+}
+.poet-directory-card .portrait-frame img,
+.poet-tile img,
+.poet-preview .poet-tile img,
+.related-grid img,
+.poet-profile-page .related-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #e6d5b5;
+  transform: none !important;
+}
+.poet-tile img {
+  height: 175px !important;
+}
+.related-grid img,
+.poet-profile-page .related-grid img {
+  height: 175px;
+  aspect-ratio: auto;
+}
+@media (max-width: 620px) {
+  .poet-tile img { height: 145px !important; }
+  .related-grid img,
+  .poet-profile-page .related-grid img { height: 145px; }
+}
