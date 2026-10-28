@@ -553,3 +553,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .image-credit-note{min-height:2.8em;padding-top:8px;border-top:1px solid rgba(122,88,43,.12)}
 @media(max-width:850px){.poet-directory-card .portrait-frame{height:auto;aspect-ratio:4/3}}
 @media(max-width:620px){.poet-directory-grid{gap:10px}.poet-directory-card .portrait-frame{aspect-ratio:4/3}.poet-directory-copy{padding:10px}.poet-directory-copy h2{font-size:21px;min-height:2em}.poet-directory-copy>p{min-height:3.2em}.poet-directory-actions{gap:7px}}
+
+/* Poet portraits: keep important facial features inside the fixed directory frames. */
+.poet-directory-card:nth-child(1) .portrait-frame img{object-position:center 14%}
+.poet-directory-card:nth-child(2) .portrait-frame img{object-position:center 32%}
+.poet-directory-card:nth-child(3) .portrait-frame img{object-position:center 38%}
+.poet-directory-card:nth-child(4) .portrait-frame img{object-position:center 30%}
